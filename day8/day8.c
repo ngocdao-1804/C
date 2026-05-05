@@ -2,15 +2,19 @@
 //tao mang có độ dài là 10 
 //cho phep người dung nhap vao số lượng phần tử của mảng
 //cap nhật phần tử của mảng
+#include <stdio.h>
+
+#define MAX_SIZE 10   // khai báo kích thước tối đa
+
 int main() {
-    int arr[10];
+    int arr[MAX_SIZE];
     int n;
 
-    printf("Nhap so luong phan tu (0-10): ");
+    printf("Nhap so luong phan tu (0-%d): ", MAX_SIZE);
     scanf("%d", &n);
 
-    if (n < 0 || n > 10) {
-        printf("So luong phan tu khong hop le. Vui long nhap lai.\n");
+    if (n < 0 || n > MAX_SIZE) {
+        printf("So luong phan tu khong hop le.\n");
         return 1;
     }
 
@@ -23,7 +27,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
-    printf("\n");
 
     return 0;
 }
