@@ -1,44 +1,4 @@
 #include <stdio.h>
-// Prototype
-void findExtremes(int arr[], int n, int *max, int *min);
-
-int main() {
-
-    int data[] = {4, -2, 8, 1, 9, 5};
-    int n = 6;
-
-    int maxValue, minValue;
-
-    // Goi ham
-    findExtremes(data, n, &maxValue, &minValue);
-
-    printf("Gia tri lon nhat: %d\n", maxValue);
-    printf("Gia tri nho nhat: %d\n", minValue);
-
-    return 0;
-}
-
-// Function definition
-void findExtremes(int arr[], int n, int *max, int *min) {
-
-    // Gan gia tri ban dau
-    *max = arr[0];
-    *min = arr[0];
-
-    // Duyet mang
-    for (int i = 1; i < n; i++) {
-
-        if (arr[i] > *max) {
-            *max = arr[i];
-        }
-
-        if (arr[i] < *min) {
-            *min = arr[i];
-        }
-    }
-}
-
-
 int main() {
     //Bai 1: Tinh tien taxi
     double s;
@@ -124,7 +84,5 @@ int main() {
     printf("So ky tu chu: %d\n", countLetter);
     printf("So ky tu so: %d\n", countNumber);
     getchar(); // hien thi ket qua truoc khi ket thuc chuong trinh
-
-
     return 0;
 }
