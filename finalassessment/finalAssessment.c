@@ -58,7 +58,7 @@ int main() {
         }
     }
         if (countPositive == 0) {
-            printf("\nKhong co so duong trong mang\n");
+            printf("Khong co so duong trong mang\n");
         }
     if (countPositive > 0) {
     printf("Trung binh cong cac so duong: %.2f\n", (float)totalPositive / countPositive);
