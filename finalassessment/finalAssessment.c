@@ -46,7 +46,7 @@ int main() {
     printf("cac so chan la:\n");
     for (int i = 0; i < size; i++) {
         if (n[i] % 2 == 0) {
-            printf("%d", n[i]);
+            printf("%d  \n", n[i]);
         }
     }
     
