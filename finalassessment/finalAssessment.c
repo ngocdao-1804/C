@@ -4,12 +4,12 @@ int main() {
     double s;
     double money;
     printf("Nhap quang duong da di duoc (km): "); // Nhap quang duong da di duoc
-    scanf("%.0lf", &s);
-
-    if (s <= 0) {// Neu quang duong khong hop le thi thong bao loi
-        printf("Quang duong khong hop le"); 
+    scanf("%lf", &s);
+    while (s <= 0 || s > 100) { // Kiem tra quang duong hop le
+        printf("Quang duong khong hop le. Vui long nhap lai: ");
+        scanf("%lf", &s);
     }
-    else if (s <= 1) {// gia mo cua
+    if (s <= 1) {// gia mo cua
         printf("So tien can tra la: 15000 VND");
     }
     else if (s <= 10){// gia từ 2km đến 10km
@@ -37,7 +37,7 @@ int main() {
     }
 
     //Bat dau nhap cac phan tu vao mang
-    for (int i = 0; i < size && i < 100; i++) {
+    for (int i = 0; i < size; i++) {
         printf("Nhap phan tu thu %d: ", i + 1);
         scanf("%d", &n[i]);
     }
@@ -46,7 +46,7 @@ int main() {
     printf("cac so chan la:\n");
     for (int i = 0; i < size; i++) {
         if (n[i] % 2 == 0) {
-            printf("%d ", n[i]);
+            printf("%d", n[i]);
         }
     }
     
@@ -58,7 +58,7 @@ int main() {
         }
     }
         if (countPositive == 0) {
-            printf("Khong co so duong trong mang");
+            printf("\nKhong co so duong trong mang\n");
         }
     if (countPositive > 0) {
     printf("Trung binh cong cac so duong: %.2f\n", (float)totalPositive / countPositive);
@@ -68,9 +68,11 @@ int main() {
     char str[226];
     int countLetter=0, countNumber=0;
     printf("Nhap chuoi: "); //Nhap chuoi tu ban phim
+    
     getchar(); // xu ly \n
     fgets(str, sizeof(str), stdin); //xu ly nhap chuoi co khoang trang
-    
+    printf("Chuoi vua nhap: %s", str);
+
     for (int i = 0; str[i] != '\0'; i++) { // dem so ky tu chu va so trong chuoi
         if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
             countLetter++;
@@ -78,9 +80,9 @@ int main() {
             countNumber++;
         }
     }
-
+    
     printf("So ky tu chu: %d\n", countLetter);
     printf("So ky tu so: %d\n", countNumber);
-
+    getchar(); // hien thi ket qua truoc khi ket thuc chuong trinh
     return 0;
 }
